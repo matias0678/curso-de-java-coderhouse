@@ -19,8 +19,6 @@ public class Venta {
     @Column(name="fecha")
     private String fechaVenta;
 
-//    @Column(name="fecha")
-//    private String fecha;
 
     @Column(name="monto_total")
     private double montoTotal;
@@ -48,13 +46,6 @@ public class Venta {
         return id;
     }
 
-//    public String getFecha() {
-//        return fecha;
-//    }
-//
-//    public void setFecha(String fecha) {
-//        this.fecha = fecha;
-//    }
 
     public double getMontoTotal() {
         return montoTotal;

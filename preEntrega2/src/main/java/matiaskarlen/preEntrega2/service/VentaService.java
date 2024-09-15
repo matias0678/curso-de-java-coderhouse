@@ -33,7 +33,7 @@ public class VentaService {
 
 
     public Venta crearVenta(Long clienteId, Long productoId, int cantidad) {
-
+        //busca si existe el cliente con ese id y el producto
         Cliente cliente = clienteRepository.findById(clienteId)
                 .orElseThrow(() -> new RuntimeException("Cliente no encontrado"));
 
@@ -43,11 +43,12 @@ public class VentaService {
         Venta venta = new Venta();
         //obtengo la fecha en que hizo la venta
         venta.setFechaVenta(LocalDate.now());
+        //calculo el total de la venta
         venta.setMontoTotal(producto.getPrecio() * cantidad);
         venta.setCliente(cliente);
         venta = ventaRepository.save(venta);
 
-
+        
         ProductosVendidos productosVendidos = new ProductosVendidos();
         productosVendidos.setVenta(venta);
         productosVendidos.setProducto(producto);
