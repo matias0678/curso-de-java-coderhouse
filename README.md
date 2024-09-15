@@ -1,9 +1,10 @@
 Endpoints 
 
-//////////////////
-CLIENTE
-/////////////////////
-Agregar (post)
+////////////////////////
+//CLIENTE
+////////////////////////
+
+Agregar (POST)
 /cliente/agregar
 body: {
   nombre String,
@@ -21,9 +22,18 @@ Buscar por id (GET)
 Eliminar (DELETE)
 /cliente/eliminar/{id}
 
-//////////////////
-PRODUCTO
-//////////////////
+Actualizar (PUT)
+/cliente/cambiar/{id}
+body: {
+  nombre String,
+  mail String,
+  dni int,
+  mail, int
+}
+
+///////////////////////////////
+//PRODUCTO
+///////////////////////////////
 Agregar (post)
 /producto/agregar
 body: {
@@ -41,9 +51,17 @@ Buscar por id (GET)
 Eliminar (DELETE)
 /producto/eliminar/{id}
 
-////////////////
-VENTA
-///////////////////
+Actualizar (PUT)
+/producto/cambiar/{id}
+body: {
+  nombre String,
+  precio double,
+  stock int,
+}
+
+////////////////////////
+//VENTA
+////////////////////////
 realizar venta (POST)
 /venta/crear/{clienteId}
 body:{
@@ -52,5 +70,11 @@ body:{
   }
   cantidad
 }
+
+Listar (GET)
+/venta/listar
+
+Buscar (GET)
+/venta/buscar/{id}
 
 
